@@ -9,8 +9,7 @@
                             <img src="{{ url_for('static', filename='img/LOGO-1-removebg-preview.png')}}" alt="" />
                         </div>
                         <p>
-                            Lorem ipsum is simply dummy text of the printe and type
-                            setting industry in the fermen.
+                        Dhalia Events Limited. Events With Elegance
                         </p>
                         <div class="social-icons">
                             <ul class="list-inline">
@@ -30,30 +29,32 @@
                 <div class="col-md-3 offset-md-1 mb-30">
                     <div class="item">
                         <h3>Contact us</h3>
-                        <p>0665 Broadway st. <br />10234 NY, USA</p>
                         <div class="phone">
-                            <a href="tel:+410315520900">+1 123 567 8910</a>
+                            <a href="tel:+254 790 815636">+254 790 815636</a>
                         </div>
                         <div class="mail">
-                            <a href="mailto:hi@rixoshotel.com">hi@rixoshotel.com</a>
+                            <a href="mailto:sales@dhaliaevents.co.ke">
+                                sales@dhaliaevents.co.ke</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 mb-30">
                     <div class="item">
-                        <h3>Subscribe</h3>
-                        <p>
-                            Want to be notified about our services. Just sign up and we'll
-                            send you a notification by email.
-                        </p>
-                        <div class="newsletter">
-                            <form action="#">
-                                <input type="email" placeholder="Email Address" required />
-                                <button type="submit">
-                                    <i class="fa-light fa-arrow-right"></i>
-                                </button>
-                            </form>
-                        </div>
+                        <h3>Our Services</h3>
+                        <ul class="footer-services">
+                            <li>
+                                <i class="fa-solid fa-angle-right"></i>
+                                <a href="/services/corporate">Corporate Events</a>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-angle-right"></i>
+                                <a href="/services/family">Family Themed Gatherings</a>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-angle-right"></i>
+                                <a href="/services/av">Audio/Visual Systems</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -76,9 +77,42 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12 text-end">
-                    <p>Copyright 2024 by <a href="#">DuruThemes</a></p>
+                    <p>Copyright <span id="currentYear"></span> by <a href="#">Plainwave technologies</a></p>
                 </div>
             </div>
         </div>
     </div>
 </footer>
+
+<style>
+.footer-services {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-services li {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.footer-services i {
+    color: #BD945A;
+    margin-right: 10px;
+    font-size: 12px;
+}
+
+.footer-services a {
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.footer-services a:hover {
+    color: #BD945A;
+}
+</style>
+
+<script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+</script>
