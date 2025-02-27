@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zxx">
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -11,6 +12,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/plugins.css')}}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}" />
 </head>
+
 <body>
     <!-- Preloader -->
     <div class="preloader">
@@ -33,7 +35,8 @@
     <!-- Navbar -->
     {% include 'nav.html' %}
     <!-- Header Banner -->
-    <section class="banner-header full-height valign bg-img" data-overlay-dark="4" data-background="{{ url_for('static', filename='img/IMG-20241207-WA0020.jpg')}}">
+    <section class="banner-header full-height valign bg-img" data-overlay-dark="4"
+        data-background="{{ url_for('static', filename='img/teamer.jpg')}}">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-12 text-center">
@@ -54,54 +57,39 @@
             </div>
             <div class="row mb-30">
                 <div class="col-md-12">
-                    <p>Whether it be honoring your employees, partners or consumers alike, awards ceremonies and gala dinners are a great way to share success with your audience. We offer a bespoke service to ensure each event is individual to you and your goals.</p>
-                    
+                    <p>At Dhalia Events Limited, we specialize in creating memorable and impactful team building experiences that cater to your organization's unique needs and objectives. Our comprehensive range of services ensures that your team building event not only fosters stronger relationships and enhances team synergy but also aligns with your company culture and values.</p>
+
                     <!-- Added styled list section -->
                     <ul style="list-style: none; padding-left: 0; margin: 30px 0;">
                         <li style="margin-bottom: 15px; padding-left: 25px; position: relative;">
-                            <span style="content: '•'; position: absolute; left: 0; color: gold; font-size: 60px;">•</span>
-                            Programming
+                            <span
+                                style="content: '•'; position: absolute; left: 0; color: gold; font-size: 60px;">•</span>
+                                Thematic Events
                         </li>
                         <li style="margin-bottom: 15px; padding-left: 25px; position: relative;">
-                            <span style="content: '•'; position: absolute; left: 0; color: gold; font-size: 60px;">•</span>
-                            Stage Design and Management
+                            <span
+                                style="content: '•'; position: absolute; left: 0; color: gold; font-size: 60px;">•</span>
+                                Venue Sourcing and Management
                         </li>
                         <li style="margin-bottom: 15px; padding-left: 25px; position: relative;">
-                            <span style="content: '•'; position: absolute; left: 0; color: gold; font-size: 60px;">•</span>
-                            Seating Plans and Arrangement
-                        </li>
-                        <li style="margin-bottom: 15px; padding-left: 25px; position: relative;">
-                            <span style="content: '•'; position: absolute; left: 0; color: gold; font-size: 60px;">•</span>
-                            Host/EMCEE
-                        </li>
-                        <li style="margin-bottom: 15px; padding-left: 25px; position: relative;">
-                            <span style="content: '•'; position: absolute; left: 0; color: gold; font-size: 60px;">•</span>
-                            Customised Trophies/Plaques
-                        </li>
-                        <li style="margin-bottom: 15px; padding-left: 25px; position: relative;">
-                            <span style="content: '•'; position: absolute; left: 0; color: gold; font-size: 60px;">•</span>
-                            Venue Management
-                        </li>
-                        <li style="margin-bottom: 15px; padding-left: 25px; position: relative;">
-                            <span style="content: '•'; position: absolute; left: 0; color: gold; font-size: 60px;">•</span>
-                            Soft/Hard Invitation Management
-                        </li>
-                        <li style="margin-bottom: 15px; padding-left: 25px; position: relative;">
-                            <span style="content: '•'; position: absolute; left: 0; color: gold; font-size: 60px;">•</span>
-                            Catering
+                            <span
+                                style="content: '•'; position: absolute; left: 0; color: gold; font-size: 60px;">•</span>
+                                Comprehensive Event Planning and Execution
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-4 col-md-12 mb-15">
-                    <img src="{{ url_for('static', filename='img/IMG-20241211-WA0008.jpg') }}" class="img-fluid rounded-2" alt="">
+                    <img src="{{ url_for('static', filename='img/hands-tower-caucasian-afro-american-friends-together-outdoors-hot-sunny-spring-day.jpg') }}"
+                        class="img-fluid rounded-2" alt="">
                 </div>
                 <div class="col-lg-4 col-md-12 mb-15">
-                    <img src="{{ url_for('static', filename='img/IMG-20241207-WA0021.jpg') }}" class="img-fluid rounded-2" alt="">
+                    <img src="{{ url_for('static', filename='img/group-friends-dancing.jpg') }}"
+                        class="img-fluid rounded-2" alt="">
                 </div>
                 <div class="col-lg-4 col-md-12 mb-15">
-                    <img src="{{ url_for('static', filename='img/dinner.avif') }}" class="img-fluid rounded-2" alt="">
+                    <img src="{{ url_for('static', filename='img/silhouette-group-people-have-fun-top-mountain-near-tent-sunset.jpg') }}" class="img-fluid rounded-2" alt="">
                 </div>
             </div>
         </div>
@@ -292,4 +280,5 @@
     <script src="{{ url_for('static', filename='js/datepicker.js')}}"></script>
     <script src="{{ url_for('static', filename='js/custom.js')}}"></script>
 </body>
+
 </html>
