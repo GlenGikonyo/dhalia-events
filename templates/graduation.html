@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>Graduation</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/LOGO-1-removebg-preview.png')}}" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Gilda+Display&amp;family=Urbanist:wght@300;400;500;600&amp;display=swap" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/plugins.css')}}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}" />
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="centered">
+            <div class="cont">
+                <div class="loader-circle"></div>
+                <div class="loader-line-mask">
+                    <div class="loader-line"></div>
+                </div>
+                <img src="{{ url_for('static', filename='img/LOGO-1-removebg-preview.png')}}" alt="" />
+            </div>
+        </div>
+    </div>
+    <!-- Progress scroll totop -->
+    <div class="progress-wrap cursor-pointer">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+    </div>
+    <!-- Navbar -->
+    {% include 'nav.html' %}
+    <!-- Header Banner -->
+    <section class="banner-header full-height valign bg-img" data-overlay-dark="4"
+        data-background="{{ url_for('static', filename='img/closeup-shot-balloons-elephant-toy.jpg')}}">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-12 text-center">
+                    <h5 style="color: #F9E386;">Dhalia Events Limited</h5>
+                    <h1>Graduations</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Page Details -->
+    <section class="page-details section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-subtitle">Dhalia Events Limited</div>
+                    <div class="section-title">About Graduations</div>
+                </div>
+            </div>
+            <div class="row mb-30">
+                <div class="col-md-12">
+                    <p>Graduation ceremonies mark significant academic achievements and new beginnings. At DHALIA Events Limited, we transform these milestone occasions into extraordinary celebrations that honor your accomplishments with style and sophistication.</p>
+                    <p>Whether you're planning an intimate gathering for family or a grand celebration with friends and classmates, our dedicated team ensures every detail is perfectly executed to create a graduation experience worthy of your achievement.</p>
+                    
+                    <!-- Styled list section -->
+                    <ul style="list-style: none; padding-left: 0; margin: 30px 0;">
+                        <li style="margin-bottom: 15px; padding-left: 25px; position: relative;">
+                            <span style="content: '•'; position: absolute; left: 0; color: gold; font-size: 60px;">•</span>
+                            Custom graduation decor with school colors and personalized themes
+                        </li>
+                        <li style="margin-bottom: 15px; padding-left: 25px; position: relative;">
+                            <span style="content: '•'; position: absolute; left: 0; color: gold; font-size: 60px;">•</span>
+                            Gourmet catering with customized menus for all dietary preferences
+                        </li>
+                        <li style="margin-bottom: 15px; padding-left: 25px; position: relative;">
+                            <span style="content: '•'; position: absolute; left: 0; color: gold; font-size: 60px;">•</span>
+                            Professional photography and videography to capture every moment
+                        </li>
+                        <li style="margin-bottom: 15px; padding-left: 25px; position: relative;">
+                            <span style="content: '•'; position: absolute; left: 0; color: gold; font-size: 60px;">•</span>
+                            Entertainment options including DJs, live bands, and multimedia presentations
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-12 mb-15">
+                    <img src="{{ url_for('static', filename='img/wine-glasses-served-table-with-lightening-candles-table-number-it.jpg') }}" class="img-fluid rounded-2" alt="" >
+                </div>
+                <div class="col-lg-4 col-md-12 mb-15">
+                    <img src="{{ url_for('static', filename='img/graduation party decor with a gold and black theme, dimensions 2048 x 1363, wider and shorter in height.png') }}" class="img-fluid rounded-2" alt="">
+                </div>
+                <div class="col-lg-4 col-md-12 mb-15">
+                    <img src="{{ url_for('static', filename='img/graduation party decor with gold and black theme (1).png') }}" class="img-fluid rounded-2" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Gallery Image -->
+    <!-- <section class="galleryscroll section-padding bg-lightbrown">
+        <div class="container-fluid p-0">
+            <div class="row justify-content-center">
+                <div class="col-md-12 text-center mb-20">
+                    <div class="section-subtitle">Spa & Wellness</div>
+                    <div class="section-title">Spa Gallery</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="owl-carousel owl-theme">
+                        <div class="item">
+                            <a href="img/spa/1.jpg" title="" class="gallery-masonry-item-img-link img-zoom">
+                                <div class="img"> <img src="img/spa/1.jpg" class="img-fluid mx-auto d-block" alt=""> </div>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="img/spa/2.jpg" title="" class="gallery-masonry-item-img-link img-zoom">
+                                <div class="img"> <img src="img/spa/2.jpg" class="img-fluid mx-auto d-block" alt=""> </div>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="img/spa/3.jpg" title="" class="gallery-masonry-item-img-link img-zoom">
+                                <div class="img"> <img src="img/spa/3.jpg" class="img-fluid mx-auto d-block" alt=""> </div>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="img/spa/4.jpg" title="" class="gallery-masonry-item-img-link img-zoom">
+                                <div class="img"> <img src="img/spa/4.jpg" class="img-fluid mx-auto d-block" alt=""> </div>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="img/spa/5.jpg" title="" class="gallery-masonry-item-img-link img-zoom">
+                                <div class="img"> <img src="img/spa/5.jpg" class="img-fluid mx-auto d-block" alt=""> </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- F.A.Qs
+    <section class="section-padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-9 col-md-12 mb-25 text-center">
+                    <div class="section-subtitle">F.A.Qs</div>
+                    <div class="section-title">Spa Etiquette</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-12">
+                    <ul class="accordion-box clearfix">
+                        <li class="accordion block">
+                            <div class="acc-btn">Arriving at The Spa</div>
+                            <div class="acc-content">
+                                <div class="content">
+                                    <div class="text">Please arrive at The Spa 15 minutes prior to your scheduled treatment and enjoy the calm and serenity of The Spa atmosphere. Arriving late makes it necessary to curtail the time for your treatment.</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="accordion block">
+                            <div class="acc-btn">Mobile Phones</div>
+                            <div class="acc-content">
+                                <div class="content">
+                                    <div class="text">Kindly refrain from using your mobile phone in The Spa premises. Please keep your mobile phone on silent mode at all times.</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="accordion block">
+                            <div class="acc-btn">Valuables</div>
+                            <div class="acc-content">
+                                <div class="content">
+                                    <div class="text">We provide a secure place for your personal items inside The Spa complex. However, we do not accept liability for loss or damage. We recommend valuable items are stored inside the safe located in your hotel room/suite.</div>
+                                </div>
+                            </div>
+                        </li> 
+                    </ul>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <ul class="accordion-box clearfix">
+                        <li class="accordion block">
+                            <div class="acc-btn">Children</div>
+                            <div class="acc-content">
+                                <div class="content">
+                                    <div class="text">The minimum age for entry to The Spa, The Health Club and the hydrothermal facilities is 16 years of age. Children under the age of 16 may use the hotel pool if they are accompanied by a parent/adult.</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="accordion block">
+                            <div class="acc-btn">Safety</div>
+                            <div class="acc-content">
+                                <div class="content">
+                                    <div class="text">The max depth of the pool is 1.60 m. There is no lifeguard at the pool. Children may only use the pool if accompanied by an adult or parent/guardian.</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="accordion block">
+                            <div class="acc-btn">Smoking</div>
+                            <div class="acc-content">
+                                <div class="content">
+                                    <div class="text">Kindly note that you are not allowed to smoke in The Spa, The Health Club or sauna area.</div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testiominals -->
+    <!-- <section class="testimonials">
+        <div class="bg-img bg-fixed section-padding" data-overlay-dark="5" data-background="img/banner/02.jpg">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-7 text-center">
+                        <div class="owl-carousel owl-theme">
+                            <div class="item"> <span>
+                                    <i class="star-rating"></i>
+                                    <i class="star-rating"></i>
+                                    <i class="star-rating"></i>
+                                    <i class="star-rating"></i>
+                                    <i class="star-rating"></i>
+                                </span>
+                                <h5>"Hotel was great. Location was excellent. The staff was incredible. A great experience all around!"</h5>
+                                <div class="info">
+                                    <div class="cont">
+                                        <h6>Frank E. <i>|</i> <span><a href="#">View on Tripadvisor</a></span></h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item"> <span>
+                                    <i class="star-rating"></i>
+                                    <i class="star-rating"></i>
+                                    <i class="star-rating"></i>
+                                    <i class="star-rating"></i>
+                                    <i class="star-rating"></i>
+                                </span>
+                                <h5>"Location was excellent. The staff was incredible. Hotel was great. A great experience all around!"</h5>
+                                <div class="info">
+                                    <div class="cont">
+                                        <h6>Emily F. <i>|</i> <span><a href="#">View on Tripadvisor</a></span></h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item"> <span>
+                                    <i class="star-rating"></i>
+                                    <i class="star-rating"></i>
+                                    <i class="star-rating"></i>
+                                    <i class="star-rating"></i>
+                                    <i class="star-rating"></i>
+                                </span>
+                                <h5>"A great experience all around! Hotel was great. Location was excellent. The staff was incredible."</h5>
+                                <div class="info">
+                                    <div class="cont">
+                                        <h6>Enrico T. <i>|</i> <span><a href="#">View on Tripadvisor</a></span></h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- Footer -->
+    {% include 'footer.html' %}
+    <!-- jQuery -->
+    <script src="{{ url_for('static', filename='js/jquery-3.7.1.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jquery-migrate-3.4.1.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/modernizr-2.6.2.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/imagesloaded.pkgd.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.isotope.v3.0.2.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/popper.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/scrollIt.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.waypoints.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/owl.carousel.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.stellar.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.magnific-popup.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/YouTubePopUp.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/select2.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/datepicker.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/custom.js')}}"></script>
+</body>
+
+</html>
