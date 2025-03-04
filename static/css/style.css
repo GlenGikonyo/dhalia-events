@@ -4881,7 +4881,7 @@ body.mfp-zoom-out-cur {
 }
 .contact .item .contents span {
     font-size: 45px;
-    color: #BD945A;
+    color: #DAAB4C;
     font-weight: 100;
 }
 .contact .item .contents .title {
@@ -4908,12 +4908,10 @@ body.mfp-zoom-out-cur {
     color: #101010;
 }
 .contact .item .btnx:hover {
-    background: #BD945A;
+    background: #DAAB4C;
     color: #fff;
 }
 .map {
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
     z-index: 9999;
     border-radius: 5px;
 }
@@ -4924,7 +4922,7 @@ body.mfp-zoom-out-cur {
     border-radius: 5px;
 }
 .form2 .head {
-    background-color: #BD945A;
+    background-color: #DAAB4C;
     border-radius: 5px 5px 0 0;
     padding: 30px;
 }
