@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Admin Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/LOGO-1-removebg-preview.png')}}" />
+    <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            padding: 20px;
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            border-right: 1px solid #333;
+        }
+
+        .logo-container {
+            padding: 5px 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+            background-color: #121212;
+            min-height: 100vh;
+        }
+
+        .nav-link {
+            color: #b0b0b0;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            background-color: #2d2d2d;
+            color: #0d6efd;
+        }
+
+        .table-responsive {
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+
+        .search-bar {
+            max-width: 300px;
+            background-color: #2d2d2d;
+            border-color: #444;
+            color: #e0e0e0;
+        }
+
+        .search-bar::placeholder {
+            color: #888;
+        }
+
+        .logout-link {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            width: calc(100% - 40px);
+        }
+
+        .card {
+            background-color: #1e1e1e;
+            border-color: #333;
+        }
+
+        .card-header {
+            background-color: #252525;
+            border-bottom-color: #333;
+            color: #e0e0e0;
+        }
+
+        .table {
+            color: #e0e0e0;
+        }
+
+        .table-hover tbody tr:hover {
+            background-color: #2d2d2d;
+        }
+
+        .btn-link {
+            color: #0d6efd;
+        }
+
+        .btn-link:hover {
+            color: #0a58ca;
+        }
+
+        .modal-content {
+            background-color: #252525;
+            color: #e0e0e0;
+            border-color: #333;
+        }
+
+        .modal-header, .modal-footer {
+            border-color: #333;
+        }
+
+        .btn-close {
+            filter: invert(1);
+        }
+
+        .form-control:focus {
+            background-color: #2d2d2d;
+            color: #e0e0e0;
+            border-color: #0d6efd;
+            box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+        }
+
+        /* Dark scrollbars */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1e1e1e;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #555;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #777;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo-container">
+            <a href="/">
+                <img class="main-logo" alt="logo"
+                    src="{{ url_for('static', filename='img/LOGO-1-removebg-preview.png')}}"
+                    style="width: 130px; height: auto;" />
+            </a>
+        </div>
+        <nav class="nav flex-column">
+            <a class="nav-link active" href="#">
+                <i class="fas fa-inbox"></i> Inbox
+            </a>
+            <a class="nav-link logout-link text-danger" href="">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">Email Messages</h5>
+                    <input type="text" class="form-control search-bar" placeholder="Search emails...">
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Subject</th>
+                                    <th>Message</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for message in messages %}
+                                <tr>
+                                    <td>{{ message.get('created_at', 'N/A') }}</td>
+                                    <td>{{ message.get('name', 'N/A') }}</td>
+                                    <td>{{ message.get('email', 'N/A') }}</td>
+                                    <td>{{ message.get('phone_number', 'N/A') }}</td>
+                                    <td>{{ message.get('msg_subject', 'N/A') }}</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-link" data-bs-toggle="modal" data-bs-target="#messageModal{{ loop.index }}">
+                                            View Message
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-sm btn-danger" data-id="{{ message.get('_id') }}" onclick="deleteMessage(this)">
+                                            Delete
+                                        </button>
+                                    </td>
+                                    
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Message Modals -->
+    {% for message in messages %}
+    <div class="modal fade" id="messageModal{{ loop.index }}" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Message from {{ message.get('name', 'N/A') }}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>{{ message.get('message', 'No message provided.') }}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+
+<script>
+    function deleteMessage(button) {
+        const messageId = button.getAttribute("data-id");
+
+        // Send an AJAX request to delete the message
+        fetch('/delete_message', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ id: messageId })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Optionally, you can remove the row from the table dynamically
+                button.closest('tr').remove();
+            } else {
+                alert('Failed to delete message.');
+            }
+        });
+    }
+</script>
+
+</html>
