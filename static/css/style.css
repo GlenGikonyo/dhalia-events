@@ -5313,6 +5313,9 @@ body.mfp-zoom-out-cur {
     .booking-inner {
         background-color: transparent;
     }
+    .nav-scroll .logo-wrapper .logo-img{
+        width: 80px;
+    }
 }
 @media (max-width: 767.98px) {
     .form1 .col1 {
@@ -5330,6 +5333,9 @@ body.mfp-zoom-out-cur {
     .btn-form1-submit:after {
         background: none;
     }   
+    .nav-scroll .logo-wrapper .logo-img{
+        width: 80px;
+    }
 }
 /* booking form */
 .booking-box {
