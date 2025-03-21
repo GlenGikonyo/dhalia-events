@@ -252,7 +252,7 @@ input[type="submit"] {
     height: auto;
     padding: 22px 27px;
     border: none;
-    background-color: #BD945A;
+    background-color: #DAAB4C;
     color: #fff;
     line-height: 20px;
     font-weight: 400;
@@ -270,7 +270,7 @@ input[type="submit"]:hover i {
 button[type="submit"]:hover,
 input[type="submit"]:hover {
     border: none;
-    background-color: #fff;
+    background-color: #01DAD9;
     color: #101010;
 }
 select {

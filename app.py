@@ -52,6 +52,8 @@ def book_now():
     
     return redirect(whatsapp_url)
 
+
+
 @app.route('/contact-us', methods=['GET', 'POST'])
 def render_contact_us():
     if request.method == 'POST':
@@ -75,20 +77,25 @@ def render_contact_us():
                 "created_at": datetime.now()
             }
 
-            
-
             result = collection.insert_one(form_data)
-           
             print(f"Data inserted with ID: {result.inserted_id}")
 
-        
-            # Provide success response
+            # Return JSON response for AJAX requests
+            if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+                return jsonify({"success": True})
+            
+            # For non-AJAX requests, redirect with flash message
+            flash("Your message has been sent successfully!", "success")
             return redirect(url_for('render_contact_us'))
 
         except Exception as e:
             print(f"Error inserting data: {e}")
 
-            return "An error occurred while submitting the form. Please try again later."
+            if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+                return jsonify({"success": False, "message": "An error occurred while submitting the form."}), 500
+            
+            flash("An error occurred while submitting the form. Please try again later.", "danger")
+            return redirect(url_for('render_contact_us'))
 
     # Render the HTML form for GET requests
     return render_template('contact.html')
