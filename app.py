@@ -200,4 +200,4 @@ def insert_admin_credentials():
         print(f"Error inserting admin credentials: {e}")
 # insert_admin_credentials()
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
